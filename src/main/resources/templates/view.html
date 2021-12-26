@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Guests Invites</title>
+
+	<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Guests</h1>
+		</div>
+		<div class="panel-body">
+			<form class="form-inline" method="POST" th:object="${FirstGuest}" style="margin: 20px 0;">
+				<div>
+					<input type="text" class="form-control" placeholder="Name" th:field="*{name}"></input>
+					<input type="text" class="form-control" placeholder="Guests" th:field="*{numberGuests}"></input>
+					<button type = "submit" class = "btn btn-primary">Add</button>
+				</div>
+			</form>
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Invites</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="Guest : ${guests}">
+						<td th:text="${Guest.name}"></td>
+						<td th:text="${Guest.numberGuests}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+
+
+</html>
