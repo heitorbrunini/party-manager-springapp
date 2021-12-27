@@ -18,10 +18,9 @@ public class InMemorySecurityConfig extends WebSecurityConfigurerAdapter{
 		.csrf().disable()
 		.authorizeRequests().anyRequest().authenticated().and().formLogin();
 	}
-	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder builder) throws Exception {
 		builder.inMemoryAuthentication().withUser("developer").password("{noop}123").roles("USER","ADMIN").
-				and().withUser("alex").password("{noop}123").roles("USER");
+				and().withUser("b9dev").password("6JT4e4ee").roles("USER","ADMIN");
 	}
 }

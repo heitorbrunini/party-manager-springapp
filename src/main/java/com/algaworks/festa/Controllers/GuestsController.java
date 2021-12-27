@@ -21,7 +21,7 @@ public class GuestsController {
 		ModelAndView modelAndView = new ModelAndView("view");
 		modelAndView.addObject("guests", repository.findAll());
 		modelAndView.addObject("FirstGuest",new FirstGuest());
-		return modelAndView;		
+		return modelAndView;
 	}
 	
 	@PostMapping
