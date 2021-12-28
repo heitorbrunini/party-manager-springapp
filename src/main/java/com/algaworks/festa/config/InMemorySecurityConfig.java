@@ -20,7 +20,9 @@ public class InMemorySecurityConfig extends WebSecurityConfigurerAdapter{
 	}
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder builder) throws Exception {
-		builder.inMemoryAuthentication().withUser("developer").password("{noop}123").roles("USER","ADMIN").
-				and().withUser("b9dev").password("6JT4e4ee").roles("USER","ADMIN");
+		builder.inMemoryAuthentication().withUser("developer").password("{noop}123").roles("USER").
+				and().withUser("b9dev").password("{noop}6JT4e4ee").roles("USER","ADMIN").
+				and().withUser("admin").password("{noop}admin6430").roles("USER","ADMIN").
+				and().withUser("Daniel").password("{noop}dhaniellz").roles("USER");
 	}
 }
